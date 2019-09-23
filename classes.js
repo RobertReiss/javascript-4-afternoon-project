@@ -77,7 +77,7 @@ class Manager extends Employee {
 
 /*
   Managers for Widget Co. get promoted when they get more employees, and get a bonus when they fire employees.
-  create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
+  Create a class ProgressiveManager that extends Manager.  A Progressive Manager has all of the same properties as a manager with the following additional properties:
     - title - default 'Not a manager'
     - bonus - default 0
 
@@ -89,12 +89,37 @@ class Manager extends Employee {
     51-100 reports : Manager Plus
     101+ reports : Bestest Manager
 
-  Everytime they fire an employee they get $100 added to their bonus.
+  Every time they fire an employee they get $100 added to their bonus.
 
   Call your new class ProgressiveManager
 */
 
-//Code Here
+class ProgressiveManager extends Manager {
+  constructor(first_name, last_name, email, age, reports, hire, fire){
+    super(first_name, last_name, email, age, reports, hire, fire)
+    this.title = 'Not a manager',
+    this.bonus = 0
+}
+
+hire(){
+  let employeeNumber = this.reports.length
+
+  if(employeeNumber === 0){
+    this.title = 'Not a manager';
+  } else if (employeeNumber > 0 && employeeNumber < 4){
+    this.title = 'Barely Manager';
+  } else if (employeeNumber > 3 && employeeNumber < 11){
+    this.title = 'Mostly Manager';
+  } else if (employeeNumber > 10 && employeeNumber < 51){
+    this.title = 'Manager';
+  } else if (employeeNumber > 50 && employeeNumber < 101){
+    this.title = 'Manager Plus';
+  } else if (employeeNumber > 100){
+    this.title = 'Bestest Manager';
+  }
+}
+}
+
 
 
 

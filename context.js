@@ -47,7 +47,7 @@ class Animal {
   }
 }
 
-animal1 = 
+animal1 = new Animal('Beaver', 'rodent', 'wood');
 
 
 
